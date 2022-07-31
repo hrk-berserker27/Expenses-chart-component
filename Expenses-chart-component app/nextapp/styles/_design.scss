@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+$screen-size: (
+    'mobile': 375px,
+    'desktop': 1440px
+);
+$color-bucket: (
+    'Soft red': hsl(10, 79%, 65%),
+    'Cyan': hsl(186, 34%, 60%),
+    'Dark brown': hsl(25, 47%, 15%),
+    'Medium brown': hsl(28, 10%, 53%),
+    'Cream': hsl(27, 66%, 92%),
+    'Very pale orange': hsl(33, 100%, 98%)
+);
+$font-size: (
+    'default': 16px,
+    'heading': 18px
+);
+
+@mixin font-family {
+    font-family: 'DM sans', 'sans-serif';
+}
+
+@mixin border-radius {
+    border-radius: 0.8em;
+}

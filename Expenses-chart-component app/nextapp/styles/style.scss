@@ -1,0 +1,144 @@
+@use "design" as d;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @include d.font-family;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 4em 1em;
+    background-color: map-get(d.$color-bucket, "Cream");
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    header {
+        @include d.border-radius;
+        background-color: map-get(d.$color-bucket, "Soft red");
+        padding: 1em 1.3em 1.5em 1.3em;
+        position: relative;
+
+        h1 {
+            padding-top: 0.3em;
+            font-size: 15px;
+            font-weight: 400;
+            color: map-get(d.$color-bucket, "Cream");
+        }
+
+        h2 {
+            font-weight: 700;
+            color: map-get(d.$color-bucket, "Very pale orange");
+            padding-top: 0.1em;
+        }
+
+        svg {
+            position: absolute;
+            right: 0.7em;
+            height: 42%;
+            width: 24.5%;
+            top: 25%;
+        }
+
+    }
+
+    section {
+        @include d.border-radius;
+        background-color: map-get(d.$color-bucket, "Very pale orange");
+        padding: 1.4em 1.2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 1em;
+
+        h2 {
+            color: map-get(d.$color-bucket, "Dark brown");
+        }
+
+        .progress-bar-container {
+            padding-top: 1.5em;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 0.2em;
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 10em;
+                width: 2.5em;
+            }
+
+            progress {
+                display: block;
+                height: 2em;
+                transform: rotate(-90deg);
+                width: 10em;
+                border-radius: 0;
+            }
+
+            progress::-webkit-progress-bar {
+                background-color: white;
+                position: relative;
+
+            }
+
+            progress::-webkit-progress-value {
+                background-color: map-get(d.$color-bucket, "Soft red");
+                border-radius: 3px;
+            }
+
+            .day {
+                font-size: 12px;
+                position: absolute;
+                top: 81%;
+                color: map-get(d.$color-bucket, "Medium brown");
+            }
+        }
+
+        footer {
+            display: flex;
+            border-top: 2px solid map-get(d.$color-bucket, "Cream");
+            padding-top: 1.5em;
+            margin-top: 2em;
+            justify-content: space-between;
+            align-items: center;
+
+            section {
+                color: map-get(d.$color-bucket, "Medium brown");
+                padding: 0;
+                gap: 0.2em;
+
+                span {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: map-get(d.$color-bucket, "Dark brown");
+                }
+            }
+
+            aside {
+                text-align: right;
+                padding-top: 1em;
+
+                div:first-child {
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: map-get(d.$color-bucket, "Dark brown");
+                }
+
+                div:last-child {
+                    color: map-get(d.$color-bucket, "Medium brown");
+                }
+            }
+        }
+    }
+}

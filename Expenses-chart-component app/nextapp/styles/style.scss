@@ -53,55 +53,60 @@ main {
     section {
         @include d.border-radius;
         background-color: map-get(d.$color-bucket, "Very pale orange");
-        padding: 1.4em 1.2em;
+        padding: 1.4em 0.5em;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        gap: 1em;
 
         h2 {
             color: map-get(d.$color-bucket, "Dark brown");
+            padding-left: 0.5em;
         }
 
         .progress-bar-container {
-            padding-top: 1.5em;
+            padding-top: 2em;
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            grid-gap: 0.2em;
 
             .container {
+                height: 12em;
+                width: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
-                height: 10em;
-                width: 2.5em;
-            }
-
-            progress {
-                display: block;
-                height: 2em;
-                transform: rotate(-90deg);
-                width: 10em;
-                border-radius: 0;
-            }
-
-            progress::-webkit-progress-bar {
-                background-color: white;
-                position: relative;
-
-            }
-
-            progress::-webkit-progress-value {
-                background-color: map-get(d.$color-bucket, "Soft red");
-                border-radius: 3px;
+                justify-content: flex-end;
+                gap: 0.6em;
             }
 
             .day {
                 font-size: 12px;
-                position: absolute;
-                top: 81%;
                 color: map-get(d.$color-bucket, "Medium brown");
+            }
+
+            .progress {
+                height: var(--dynamicHeight);
+                width: 60%;
+                background-color: map-get(d.$color-bucket, "Soft red");
+                border-radius: 5px;
+            }
+
+            .data-amount {
+                background-color: map-get(d.$color-bucket, "Dark brown");
+                color: map-get(d.$color-bucket, "Cream");
+                text-align: center;
+                width: 4em;
+                border-radius: 5px;
+                display: grid;
+                place-items: center;
+                font-size: 13px;
+                padding: 0.4em 0.5em;
+                visibility: hidden;
+            }
+
+            .container:hover .data-amount,
+            .container:hover {
+                visibility: visible;
+                cursor: pointer;
             }
         }
 
@@ -109,9 +114,11 @@ main {
             display: flex;
             border-top: 2px solid map-get(d.$color-bucket, "Cream");
             padding-top: 1.5em;
-            margin-top: 2em;
+            padding-left: 0.8em;
+            padding-right: 0.8em;
             justify-content: space-between;
             align-items: center;
+            margin-top: 0.5em;
 
             section {
                 color: map-get(d.$color-bucket, "Medium brown");
@@ -127,15 +134,16 @@ main {
 
             aside {
                 text-align: right;
-                padding-top: 1em;
+                font-size: 14px;
+                padding-top: 1.7em;
 
                 div:first-child {
-                    font-size: 18px;
                     font-weight: 700;
                     color: map-get(d.$color-bucket, "Dark brown");
                 }
 
                 div:last-child {
+                    font-size: 15px;
                     color: map-get(d.$color-bucket, "Medium brown");
                 }
             }

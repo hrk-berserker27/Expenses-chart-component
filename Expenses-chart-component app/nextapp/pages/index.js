@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import data from "../public/data.json";
 function MyBalance(props) {
   return (
@@ -23,6 +23,27 @@ function MyBalance(props) {
 }
 
 function MySpending() {
+  //javascript -> I am proud of
+  const newMap = new Map();
+  const BalancingToEM = (amount) => {
+    const maxValue = 60;
+    return (10 / maxValue) * amount;
+  };
+  data.map((item) => newMap.set(item.day, BalancingToEM(item.amount)));
+  const heightSetter = () => {
+    if (typeof window !== "undefined") {
+      const itemList = document.querySelectorAll(".progress");
+      Array.from(itemList).map((item) => {
+        const day = item.getAttribute("data-id");
+        if (day === "wed") {
+          item.style.backgroundColor = "hsl(186, 34%, 60%)";
+        }
+        const newHeight = newMap.get(day);
+        item.style.setProperty("--dynamicHeight", `${newHeight}em`);
+      });
+    }
+  };
+  heightSetter();
   return (
     <>
       <section>
@@ -30,11 +51,12 @@ function MySpending() {
         <div className="progress-bar-container">
           {Array.from(data).map((item) => (
             <div className="container" key={item.day}>
-              <progress
-                role="progressbar"
-                max="60"
-                value={item.amount}
-              ></progress>
+              <div className="data-amount">${item.amount}</div>
+              <div
+                data-id={item.day}
+                data-value={item.amount}
+                className="progress"
+              ></div>
               <div className="day">{item.day}</div>
             </div>
           ))}

@@ -124,7 +124,9 @@ main {
             align-items: center;
             margin-top: 0.5em;
 
-            section {
+            .section {
+                display: flex;
+                flex-direction: column;
                 color: map-get(d.$color-bucket, "Medium brown");
                 padding: 0;
                 gap: 0.2em;

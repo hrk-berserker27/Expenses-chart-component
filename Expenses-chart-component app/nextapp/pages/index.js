@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Head from "next/head";
 import data from "../public/data.json";
 function MyBalance(props) {
   return (
@@ -62,9 +63,9 @@ function MySpending() {
           ))}
         </div>
         <footer>
-          <section>
+          <div className="section">
             Total this month <span>$478.33</span>
-          </section>
+          </div>
           <aside>
             <div>+2.4% </div>
             <div>from last month</div>
@@ -77,6 +78,17 @@ function MySpending() {
 export default function HomePage() {
   return (
     <Fragment>
+      <Head>
+        <title>Expenses Chart Component | Frontend Mentor</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="my first next.js app" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="./images/favicon-32x32.png"
+        ></link>
+      </Head>
       <main>
         <MyBalance balance="921.48" />
         <MySpending />

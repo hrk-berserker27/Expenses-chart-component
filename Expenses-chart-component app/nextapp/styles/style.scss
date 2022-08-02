@@ -11,7 +11,7 @@ body {
     display: grid;
     place-items: center;
     min-height: 100vh;
-    padding: 4em 1em;
+    padding: 4em 0em;
     background-color: map-get(d.$color-bucket, "Cream");
 }
 
@@ -103,10 +103,14 @@ main {
                 visibility: hidden;
             }
 
-            .container:hover .data-amount,
-            .container:hover {
+            .container:hover .data-amount {
                 visibility: visible;
                 cursor: pointer;
+            }
+
+            .container:hover .progress {
+                cursor: pointer;
+                opacity: 0.6;
             }
         }
 

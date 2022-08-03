@@ -27,7 +27,7 @@ function MySpending() {
   //javascript -> I am proud of
   const newMap = new Map();
   const BalancingToEM = (amount) => {
-    const maxValue = 60;
+    const maxValue = 55;
     return (10 / maxValue) * amount;
   };
   data.map((item) => newMap.set(item.day, BalancingToEM(item.amount)));

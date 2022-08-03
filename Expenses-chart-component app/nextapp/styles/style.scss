@@ -11,7 +11,7 @@ body {
     display: grid;
     place-items: center;
     min-height: 100vh;
-    padding: 4em 0em;
+    padding: 4em 1em;
     background-color: map-get(d.$color-bucket, "Cream");
 }
 
@@ -24,7 +24,10 @@ main {
     header {
         @include d.border-radius;
         background-color: map-get(d.$color-bucket, "Soft red");
-        padding: 1em 1.3em 1.5em 1.3em;
+        padding-top: 0.9em;
+        padding-left: 1.2em;
+        height: 6em;
+        width: 21.5em;
         position: relative;
 
         h1 {
@@ -53,7 +56,7 @@ main {
     section {
         @include d.border-radius;
         background-color: map-get(d.$color-bucket, "Very pale orange");
-        padding: 1.4em 0.5em;
+        padding: 1.4em 0.4em;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -64,18 +67,19 @@ main {
         }
 
         .progress-bar-container {
-            padding-top: 2em;
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0.85em;
 
             .container {
-                height: 12em;
-                width: 100%;
+                width: 2.05em;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-end;
                 gap: 0.6em;
+                margin-right: 0.2em;
+                padding-top: 1em;
             }
 
             .day {
@@ -85,7 +89,7 @@ main {
 
             .progress {
                 height: var(--dynamicHeight);
-                width: 60%;
+                width: 2.05em;
                 background-color: map-get(d.$color-bucket, "Soft red");
                 border-radius: 5px;
             }
@@ -117,12 +121,12 @@ main {
         footer {
             display: flex;
             border-top: 2px solid map-get(d.$color-bucket, "Cream");
-            padding-top: 1.5em;
-            padding-left: 0.8em;
-            padding-right: 0.8em;
             justify-content: space-between;
             align-items: center;
-            margin-top: 0.5em;
+            margin-top: 1.7em;
+            padding-top: 1.3em;
+            padding-left: 0.72em;
+            padding-right: 0.8em;
 
             .section {
                 display: flex;
@@ -130,6 +134,7 @@ main {
                 color: map-get(d.$color-bucket, "Medium brown");
                 padding: 0;
                 gap: 0.2em;
+                font-size: 16px;
 
                 span {
                     font-size: 2rem;
@@ -140,8 +145,8 @@ main {
 
             aside {
                 text-align: right;
-                font-size: 14px;
-                padding-top: 1.7em;
+                font-size: 15px;
+                padding-top: 1.6em;
 
                 div:first-child {
                     font-weight: 700;

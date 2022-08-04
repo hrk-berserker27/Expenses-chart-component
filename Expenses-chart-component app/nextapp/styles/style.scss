@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
     padding: 4em 1em;
     background-color: map-get(d.$color-bucket, "Cream");
+    overflow: hidden;
 }
 
 main {
@@ -96,9 +97,8 @@ main {
             }
 
             .setHeight {
-                transition: height 2s linear;
+                transition: height 2s ease;
                 height: var(--dynamicHeight);
-
             }
 
             .data-amount {

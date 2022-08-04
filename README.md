@@ -1,6 +1,6 @@
 # Frontend Mentor - Expenses chart component
 
-![Checkout the live site](https://expenses-chart-component-opal.vercel.app/)
+![Preview of the live site](./design/My%20app%20screenshot.png);
 
 ## Welcome! 👋
 
@@ -24,27 +24,33 @@ Following were the aspects which I had to take care why building this project:
 - **Bonus**: See dynamically generated bars based on the data provided in the local JSON file
 
 ## Deployment platform
+
 This solution is hosted on Vercel.
+
 - [Vercel](https://vercel.com/)
 
 ## Tools used for building this solution
+
 - Next.js
 - React
 - Sass/Scss
 
 ## Articles which I found useful while building this project
+
 - [This helped me set up the head component in the app](https://www.youtube.com/watch?v=vWWd5ezQTic)
 - [This helped me learn Next.js](https://nextjs.org/docs/getting-started)
 - [Learnt about different pseudo class selectos for designing progress bars](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-progress-bar)
 - [Learnt how to set-up custom Document object in Next.js](https://nextjs.org/docs/advanced-features/custom-document)
 
 ## Challenges which I faced while building this project
+
 - Struggled to set up dynamic bars for the given data
 - Setting the position of the bars
 - Responsiveness of the main component-> needs more improvement
 - Separate styling for the Desktop and mobile version
- 
+
 I tried my best in making the component as close as possible to the main design.
 
 ## Future goals
+
 I would like to improve the responsiveness part of the challenge and better JS to set up dynamic bar chart.

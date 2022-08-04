@@ -68,8 +68,9 @@ main {
 
         .progress-bar-container {
             display: flex;
-            justify-content: space-between;
-            padding: 0 0.85em;
+            justify-content: space-evenly;
+            padding: 0 0.3em;
+            padding-right: 0.15em;
 
             .container {
                 width: 2.05em;
@@ -78,7 +79,7 @@ main {
                 align-items: center;
                 justify-content: flex-end;
                 gap: 0.6em;
-                margin-right: 0.2em;
+                margin-right: 0.18em;
                 padding-top: 1em;
             }
 
@@ -88,10 +89,16 @@ main {
             }
 
             .progress {
-                height: var(--dynamicHeight);
                 width: 2.05em;
                 background-color: map-get(d.$color-bucket, "Soft red");
                 border-radius: 5px;
+                height: 0em;
+            }
+
+            .setHeight {
+                transition: height 2s linear;
+                height: var(--dynamicHeight);
+
             }
 
             .data-amount {

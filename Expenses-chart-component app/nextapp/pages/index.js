@@ -26,6 +26,7 @@ function MyBalance(props) {
 function MySpending() {
   //javascript -> I am proud of
   const newMap = new Map();
+
   const BalancingToEM = (amount) => {
     const maxValue = 55;
     return (10 / maxValue) * amount;
@@ -36,6 +37,7 @@ function MySpending() {
       const itemList = document.querySelectorAll(".progress");
       Array.from(itemList).map((item) => {
         const day = item.getAttribute("data-id");
+        item.classList.add("setHeight");
         if (day === "wed") {
           item.style.backgroundColor = "hsl(186, 34%, 60%)";
         }
